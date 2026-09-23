@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Naga Siren — разгоняем иллюзии</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500&family=Philosopher:wght@700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --deep: #06161f;
+    --sea: #0d3440;
+    --teal: #2fc4b2;
+    --pearl: #e9f5f2;
+    --gold: #e6bd5c;
+  }
+  * { box-sizing: border-box; margin: 0; }
+  html, body { height: 100%; }
+  body {
+    font-family: "Golos Text", system-ui, sans-serif;
+    color: var(--pearl);
+    background: radial-gradient(ellipse at 50% 20%, var(--sea), var(--deep) 70%);
+    overflow: hidden;
+  }
+  h1, h2 { font-family: "Philosopher", Georgia, serif; line-height: 1.15; }
+
+  .slide {
+    position: absolute; inset: 0 0 84px 0;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 1.5rem; padding: 1.5rem; text-align: center;
+    opacity: 0; visibility: hidden; transition: opacity .4s ease, visibility .4s;
+  }
+  .slide.active { opacity: 1; visibility: visible; }
+
+  /* Слайд 1 */
+  .hero { font-size: clamp(2rem, 6vw, 4.2rem); max-width: 18ch; color: var(--pearl); text-shadow: 0 0 40px rgba(47,196,178,.45); }
+
+  /* Слайд 2 */
+  .portrait {
+    width: min(560px, 90vw); max-height: 48vh; object-fit: cover;
+    border-radius: 18px; border: 2px solid var(--gold);
+    box-shadow: 0 0 0 6px rgba(230,189,92,.15), 0 20px 50px rgba(0,0,0,.55);
+  }
+  .placeholder {
+    width: min(560px, 90vw); height: 40vh; display: none; align-items: center; justify-content: center;
+    padding: 1rem; border: 2px dashed var(--teal); border-radius: 18px; color: var(--teal);
+  }
+  .lead { max-width: 34rem; font-size: clamp(1.05rem, 2.4vw, 1.4rem); line-height: 1.6; }
+  .lead strong { color: var(--gold); font-weight: 500; }
+
+  /* Слайд 3 */
+  .step-title { font-size: clamp(2rem, 5vw, 3.2rem); color: var(--gold); }
+  .key {
+    display: inline-flex; align-items: flex-end; width: 190px; height: 112px; padding: 12px 18px;
+    border-radius: 16px; font: 700 1.7rem "Golos Text", sans-serif; color: var(--pearl);
+    background: linear-gradient(#31505d, #1d3540);
+    box-shadow: 0 9px 0 #0a1c24, 0 18px 28px rgba(0,0,0,.55), inset 0 1px 0 rgba(255,255,255,.2);
+  }
+
+  /* Слайды 4-6 */
+  .statement { font-size: clamp(1.7rem, 4.6vw, 3.1rem); max-width: 22ch; text-shadow: 0 0 40px rgba(47,196,178,.35); }
+  .lead.big { font-size: clamp(1.3rem, 3.2vw, 2rem); max-width: 26ch; }
+
+  /* Навигация */
+  nav {
+    position: fixed; left: 0; right: 0; bottom: 0; height: 84px;
+    display: flex; align-items: center; justify-content: center; gap: 1.25rem;
+  }
+  nav button.btn {
+    font: 500 1rem "Golos Text", sans-serif; padding: .7rem 1.4rem; border-radius: 999px;
+    color: var(--deep); background: var(--teal); border: 0; cursor: pointer;
+  }
+  nav button.btn:disabled { opacity: .3; cursor: default; }
+  .dots { display: flex; gap: .6rem; }
+  .dot { width: 12px; height: 12px; padding: 0; border-radius: 50%; border: 2px solid var(--teal); background: transparent; cursor: pointer; }
+  .dot.on { background: var(--gold); border-color: var(--gold); }
+  button:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+  @media (prefers-reduced-motion: reduce) { .slide { transition: none; } }
+</style>
+</head>
+<body>
+
+<!-- Слайд 1 -->
+<section class="slide active">
+  <h1 class="hero">Приветствую тебя, юный игрок, на персонаже Naga Siren!</h1>
+</section>
+
+<!-- Слайд 2 -->
+<section class="slide">
+  <!-- Положи рядом с index.html картинку naga.jpg -->
+  <img class="portrait" src="naga.jpg" alt="Naga Siren из Dota 2"
+       onerror="this.style.display='none'; document.querySelector('.placeholder').style.display='flex';">
+  <div class="placeholder">Загрузи в репозиторий картинку с именем naga.jpg, и она появится здесь</div>
+  <p class="lead">Это туториал о том, как правильно разгонять иллюзии на <strong>Naga Siren</strong>. Я хочу показать вам всё как надо и рассказать, как делать <strong>1000 GPM</strong>.</p>
+</section>
+
+<!-- Слайд 3 -->
+<section class="slide">
+  <h2 class="step-title">Step 1</h2>
+  <p class="lead">Забинди сущностей на любую удобную клавишу, например на <strong>TAB</strong>.</p>
+  <div class="key" aria-label="Клавиша Tab">Tab</div>
+</section>
+
+<!-- Слайд 4 -->
+<section class="slide">
+  <h2 class="statement">Денис верил в меня, а мой друг Руслан не верил.</h2>
+</section>
+
+<!-- Слайд 5 -->
+<section class="slide">
+  <p class="lead big">Хочу выразить большую благодарность моему другу <strong>Денису</strong>, который со мной поугарал. Он любит Вич Блейд и Доту 2.</p>
+</section>
+
+<!-- Слайд 6 -->
+<section class="slide">
+  <h2 class="statement">На этом весь смысл данного сайта, созданного мной, закончен. Всем пока!</h2>
+</section>
+
+<nav>
+  <button class="btn" id="prev">Назад</button>
+  <div class="dots" id="dots"></div>
+  <button class="btn" id="next">Дальше</button>
+</nav>
+
+<script>
+  const slides = document.querySelectorAll('.slide');
+  const dotsBox = document.getElementById('dots');
+  const prev = document.getElementById('prev');
+  const next = document.getElementById('next');
+  let i = 0;
+
+  slides.forEach((_, n) => {
+    const d = document.createElement('button');
+    d.className = 'dot';
+    d.setAttribute('aria-label', 'Слайд ' + (n + 1));
+    d.onclick = () => show(n);
+    dotsBox.appendChild(d);
+  });
+
+  function show(n) {
+    i = Math.max(0, Math.min(slides.length - 1, n));
+    slides.forEach((s, k) => s.classList.toggle('active', k === i));
+    dotsBox.querySelectorAll('.dot').forEach((d, k) => d.classList.toggle('on', k === i));
+    prev.disabled = i === 0;
+    next.disabled = i === slides.length - 1;
+  }
+
+  prev.onclick = () => show(i - 1);
+  next.onclick = () => show(i + 1);
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight') show(i + 1);
+    if (e.key === 'ArrowLeft') show(i - 1);
+  });
+  show(0);
+</script>
+</body>
+</html>
